@@ -1,18 +1,13 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+This is Stingray. I am currently a student at Carnegie Mellon University.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Here you can find a portfolio of my past projects and documentation for them.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I will also post some blogs about my life.
 
-
-[jekyll-organization]: https://github.com/jekyll
+I would like to still keep myself anonymous. I enjoy privacy and don't want to get into trouble with my projects.  
