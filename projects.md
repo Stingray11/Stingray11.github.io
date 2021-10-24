@@ -1,6 +1,4 @@
 ---
 layout: home-project
 title: Projects
-permalink: /project/
-categories: Project
 ---
