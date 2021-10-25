@@ -48,7 +48,7 @@ window.onload = function () {
                 //if(child.material) child.material = new THREE.MeshPhongMaterial({ color: "blue", shininess: 15, specular: "#00ff00" });
                 if (child.isMesh){
                     child.material = new THREE.MeshPhongMaterial({ color: "gray", shininess: 15, specular: "#ffffff" });
-                    child.material.wireframe = true;
+                    //child.material.wireframe = true;
                 }
             });
 
@@ -71,6 +71,12 @@ window.onload = function () {
     spotlight_4.castShadow = true;
     scene.add(spotlight_4);
 
+    let spotlight_5 = new THREE.SpotLight(0xaaaaff, 0.5);
+    spotlight_5.angle = Math.PI / 8;;
+    spotlight_5.position.set(-0, -20, 0);
+    spotlight_5.target = box;
+    spotlight_5.castShadow = true;
+    scene.add(spotlight_5);
   
 
 
@@ -118,7 +124,7 @@ window.onload = function () {
 
 
         /**@type{THREE.AmbientLight} */
-        let amb_light = new THREE.AmbientLight(0xffffff, 0.2);
+        let amb_light = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(amb_light);
     }
 
