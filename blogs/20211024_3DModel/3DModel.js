@@ -2,9 +2,9 @@
 // @ts-check
 
 import * as THREE from "../../assets/THREE/src/Three.js";
-// import { OrbitControls } from "../../assets/THREE/examples/jsm/controls/OrbitControls.js";
+import { OrbitControls } from "../../assets/THREE/examples/jsm/controls/OrbitControls.js";
 
-// import { OBJLoader } from "../../assets/THREE/examples/jsm/loaders/OBJLoader.js";
+import { OBJLoader } from "../../assets/THREE/examples/jsm/loaders/OBJLoader.js";
 
 window.onload = function () {
     /** @type{THREE.Scene} */
@@ -17,12 +17,13 @@ window.onload = function () {
     let main_camera = new THREE.PerspectiveCamera(60, wid / ht, 1, 100);
     main_camera.position.set(0, 4, 6);
     main_camera.rotation.set(-0.5, 0, 0);
+
     let active_camera = main_camera;
     /** @type{THREE.WebGLRenderer} */
     let renderer = new THREE.WebGLRenderer();
     renderer.setSize(wid, ht);
     renderer.shadowMap.enabled = true;
-
+    let controls = new OrbitControls(main_camera,renderer.domElement);
     document.getElementById("museum_area").appendChild(renderer.domElement);
     setupButtons();
     setupBasicScene();
@@ -59,6 +60,16 @@ window.onload = function () {
     let cylinderMesh = new THREE.Mesh(cylinder, material4);
     cylinderMesh.position.set(-2, 1.5, 2);
     cylinderMesh.castShadow = true;
+
+
+    let geometry5 = new THREE.Geometry();
+    let material5 = new THREE.MeshPhongMaterial({ color: "blue", shininess: 15, specular: "#00ff00" });
+    let box = new THREE.Mesh(geometry5,material5);
+    let loader = new OBJLoader();
+    loader.load("../../../../astronaut.obj", function(model){
+        model.position.set(0,0,0);
+        box.add(model);
+    });
 
 
     /**@type{THREE.SpotLight} */
@@ -113,7 +124,7 @@ window.onload = function () {
     scene.add(coneMesh);
     scene.add(cylinderMesh);
     scene.add(cube2);
-
+    scene.add(box);
     // finally, draw the scene. Also, add animation.
 
     renderer.render(scene, main_camera);
