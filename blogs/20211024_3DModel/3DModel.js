@@ -125,7 +125,7 @@ window.onload = function () {
     scene.add(coneMesh);
     scene.add(cylinderMesh);
     scene.add(cube2);
-    scene.add(box);
+    //scene.add(box);
     // finally, draw the scene. Also, add animation.
 
     renderer.render(scene, main_camera);
