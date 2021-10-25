@@ -66,7 +66,7 @@ window.onload = function () {
     let material5 = new THREE.MeshPhongMaterial({ color: "blue", shininess: 15, specular: "#00ff00" });
     let box = new THREE.Mesh(geometry5,material5);
     let loader = new OBJLoader();
-    loader.load("../../../../astronaut.obj", function(model){
+    loader.load("../../blogs/20211024_3DModel/astronaut.obj", function(model){
         model.position.set(0,0,0);
         box.add(model);
     });
