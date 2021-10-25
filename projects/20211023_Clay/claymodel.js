@@ -20,7 +20,7 @@ window.onload = function () {
 
     let active_camera = main_camera;
     /** @type{THREE.WebGLRenderer} */
-    let renderer = new THREE.WebGLRenderer({alpha:true});
+    let renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
     renderer.setSize(wid, ht);
     renderer.shadowMap.enabled = true;
     renderer.setClearColor(0xffffff,0);
@@ -33,7 +33,7 @@ window.onload = function () {
 
     let geometry5 = new THREE.Geometry();
     //let material5 = new THREE.MeshPhongMaterial({ color: "blue", shininess: 15, specular: "#00ff00" });
-    let material5 = new THREE.MeshStandardMaterial({ color: "blue",wireframe:true });
+    let material5 = new THREE.MeshPhongMaterial({ color: "blue", shininess: 15, specular: "#00ff00" });
     
     let box = new THREE.Mesh(geometry5,material5);
     let loader = new OBJLoader();
@@ -44,6 +44,14 @@ window.onload = function () {
     // });
 
     loader.load("/assets/grip_ver1.obj", function(model){
+            model.traverse(child=>{
+                //if(child.material) child.material = new THREE.MeshPhongMaterial({ color: "blue", shininess: 15, specular: "#00ff00" });
+                if (child.isMesh){
+                    child.material = new THREE.MeshPhongMaterial({ color: "gray", shininess: 15, specular: "#ffffff" });
+                    child.material.wireframe = true;
+                }
+            });
+
         model.position.set(0,0,0);
         model.scale.set(0.05,0.05,0.05);
 
