@@ -2,9 +2,9 @@
 // @ts-check
 
 import * as THREE from "../../assets/THREE/src/Three.js";
-import { OrbitControls } from "../../assets/THREE/examples/jsm/controls/OrbitControls.js";
+// import { OrbitControls } from "../../assets/THREE/examples/jsm/controls/OrbitControls.js";
 
-import { OBJLoader } from "../../assets/THREE/examples/jsm/loaders/OBJLoader.js";
+// import { OBJLoader } from "../../assets/THREE/examples/jsm/loaders/OBJLoader.js";
 
 window.onload = function () {
     /** @type{THREE.Scene} */
