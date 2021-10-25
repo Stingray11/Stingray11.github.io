@@ -66,8 +66,9 @@ window.onload = function () {
     let material5 = new THREE.MeshPhongMaterial({ color: "blue", shininess: 15, specular: "#00ff00" });
     let box = new THREE.Mesh(geometry5,material5);
     let loader = new OBJLoader();
-    loader.load("/assets/astronaut.obj", function(model){
+    loader.load("/assets/grip_ver1.obj", function(model){
         model.position.set(0,0,0);
+        model.scale.set(0.1,0.1,0.1);
         box.add(model);
     });
 
